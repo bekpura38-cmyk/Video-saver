@@ -1,0 +1,9 @@
+[build]
+builder = "nixpacks"
+
+[build.nixpacksPlan.phases.setup]
+nixPkgs = ["python312", "ffmpeg"]
+
+[deploy]
+startCommand = "python bot.py"
+restartPolicyType = "always"
