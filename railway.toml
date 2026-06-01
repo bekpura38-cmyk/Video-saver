@@ -1,0 +1,12 @@
+[build]
+builder = "nixpacks"
+
+[build.nixpacksPlan.phases.setup]
+nixPkgs = ["python312", "ffmpeg"]
+
+[build.nixpacksPlan.phases.install]
+cmds = ["pip install -r requirements.txt", "yt-dlp -U"]
+
+[deploy]
+startCommand = "python bot.py"
+restartPolicyType = "always"
